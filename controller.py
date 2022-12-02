@@ -141,36 +141,60 @@ class Controller(QMainWindow, Ui_MainWindow):
         :return: Does not return anything
         '''
         if self.circleButton.isChecked():
-            radius = float(self.input1Line.text())
+            try:
+                radius = float(self.input1Line.text())
+            except:
+                self.outputLabel.setText("Enter numbers only!")
+                return
             if radius < 0:
                 self.outputLabel.setText("Enter a positive number!")
             else:
                 area = math.pi * radius ** 2
                 self.outputLabel.setText(f'Circle area = {area:.2f}')
         elif self.rectangleButton.isChecked():
-            length = float(self.input1Line.text())
+            try:
+                length = float(self.input1Line.text())
+            except:
+                self.outputLabel.setText("Enter numbers only!")
+                return
             if length < 0:
                 self.outputLabel.setText("Enter positive numbers!")
             else:
-                width = float(self.input2Line.text())
+                try:
+                    width = float(self.input2Line.text())
+                except:
+                    self.outputLabel.setText("Enter numbers only!")
+                    return
                 if width < 0:
                     self.outputLabel.setText("Enter positive numbers!")
                 else:
                     area = length * width
                     self.outputLabel.setText(f'Rectangle area = {area:.2f}')
         elif self.squareButton.isChecked():
-            length = float(self.input1Line.text())
+            try:
+                length = float(self.input1Line.text())
+            except:
+                self.outputLabel.setText("Enter numbers only!")
+                return
             if length < 0:
                 self.outputLabel.setText("Enter positive numbers!")
             else:
                 area = length ** 2
                 self.outputLabel.setText(f'Square area = {area:.2f}')
         elif self.triangleButton.isChecked():
-            side1 = float(self.input1Line.text())
+            try:
+                side1 = float(self.input1Line.text())
+            except:
+                self.outputLabel.setText("Enter numbers only!")
+                return
             if side1 < 0:
                 self.outputLabel.setText("Enter positive numbers!")
             else:
-                side2 = float(self.input2Line.text())
+                try:
+                    side2 = float(self.input2Line.text())
+                except:
+                    self.outputLabel.setText("Enter numbers only!")
+                    return
                 if side2 < 0:
                     self.outputLabel.setText("Enter positive numbers!")
                 else:
@@ -183,40 +207,68 @@ class Controller(QMainWindow, Ui_MainWindow):
         :return: Does not return anything
         '''
         if self.circleButton.isChecked():
-            radius = float(self.input1Line.text())
+            try:
+                radius = float(self.input1Line.text())
+            except:
+                self.outputLabel.setText("Enter numbers only!")
+                return
             if radius < 0:
                 self.outputLabel.setText("Enter a positive number!")
             else:
                 perimeter = 2 * math.pi * radius
                 self.outputLabel.setText(f'Circle perimeter = {perimeter:.2f}')
         elif self.rectangleButton.isChecked():
-            length = float(self.input1Line.text())
+            try:
+                length = float(self.input1Line.text())
+            except:
+                self.outputLabel.setText("Enter numbers only!")
+                return
             if length < 0:
                 self.outputLabel.setText("Enter positive numbers!")
             else:
-                width = float(self.input2Line.text())
+                try:
+                    width = float(self.input2Line.text())
+                except:
+                    self.outputLabel.setText("Enter numbers only!")
+                    return
                 if width < 0:
                     self.outputLabel.setText("Enter positive numbers!")
                 else:
                     perimeter = (2 *length) + (2 * width)
                     self.outputLabel.setText(f'Rectangle perimeter = {perimeter:.2f}')
         elif self.squareButton.isChecked():
-            length = float(self.input1Line.text())
+            try:
+                length = float(self.input1Line.text())
+            except:
+                self.outputLabel.setText("Enter numbers only!")
+                return
             if length < 0:
                 self.outputLabel.setText("Enter positive numbers!")
             else:
                 perimeter = length * 4
                 self.outputLabel.setText(f'Square perimeter = {perimeter:.2f}')
         elif self.triangleButton.isChecked():
-            side1 = float(self.input1Line.text())
+            try:
+                side1 = float(self.input1Line.text())
+            except:
+                self.outputLabel.setText("Enter numbers only!")
+                return
             if side1 < 0:
                 self.outputLabel.setText("Enter positive numbers!")
             else:
-                side2 = float(self.input2Line.text())
+                try:
+                    side2 = float(self.input2Line.text())
+                except:
+                    self.outputLabel.setText("Enter numbers only!")
+                    return
                 if side2 < 0:
                     self.outputLabel.setText("Enter positive numbers!")
                 else:
-                    side3 = float(self.input3Line.text())
+                    try:
+                        side3 = float(self.input3Line.text())
+                    except:
+                        self.outputLabel.setText("Enter numbers only!")
+                        return
                     if side3 < 0:
                         self.outputLabel.setText("Enter positive numbers!")
                     else:
