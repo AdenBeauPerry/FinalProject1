@@ -1,4 +1,3 @@
-from shapes import area,perimeter
 from PyQt5.QtWidgets import *
 from view import *
 import math
