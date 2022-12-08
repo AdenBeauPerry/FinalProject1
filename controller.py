@@ -34,7 +34,9 @@ class Controller(QMainWindow, Ui_MainWindow):
         Adjusts the UI depending on the which buttons are clicked
         :return: Does not return anything
         '''
+        # Adjusts UI based on area parameters
         if self.areaButton.isChecked():
+            # Adjustments for circles
             if self.circleButton.isChecked():
                 self.input1Line.setVisible(True)
                 self.input1Label.setVisible(True)
@@ -44,6 +46,7 @@ class Controller(QMainWindow, Ui_MainWindow):
                 self.input3Line.setVisible(False)
                 self.input3Label.setVisible(False)
                 self.setImage("circleSymbol.png")
+            # Adjustments for rectangles
             elif self.rectangleButton.isChecked():
                 self.input1Line.setVisible(True)
                 self.input1Label.setVisible(True)
@@ -54,6 +57,7 @@ class Controller(QMainWindow, Ui_MainWindow):
                 self.input3Line.setVisible(False)
                 self.input3Label.setVisible(False)
                 self.setImage("rectangleSymbol.png")
+            # Adjustments for squares
             elif self.squareButton.isChecked():
                 self.input1Line.setVisible(True)
                 self.input1Label.setVisible(True)
@@ -63,6 +67,7 @@ class Controller(QMainWindow, Ui_MainWindow):
                 self.input3Line.setVisible(False)
                 self.input3Label.setVisible(False)
                 self.setImage("squareSymbol.jpg")
+            # Adjustments for triangles
             elif self.triangleButton.isChecked():
                 self.input1Line.setVisible(True)
                 self.input1Label.setVisible(True)
@@ -73,7 +78,9 @@ class Controller(QMainWindow, Ui_MainWindow):
                 self.input3Line.setVisible(False)
                 self.input3Label.setVisible(False)
                 self.setImage("triangleSymbol.jpg")
+        # Adjusts UI based on perimeter parameters
         elif self.perimeterButton.isChecked():
+            # Adjustments for circles
             if self.circleButton.isChecked():
                 self.input1Line.setVisible(True)
                 self.input1Label.setVisible(True)
@@ -83,6 +90,7 @@ class Controller(QMainWindow, Ui_MainWindow):
                 self.input3Line.setVisible(False)
                 self.input3Label.setVisible(False)
                 self.setImage("circleSymbol.png")
+            # Adjustments for rectangles
             elif self.rectangleButton.isChecked():
                 self.input1Line.setVisible(True)
                 self.input1Label.setVisible(True)
@@ -93,6 +101,7 @@ class Controller(QMainWindow, Ui_MainWindow):
                 self.input3Line.setVisible(False)
                 self.input3Label.setVisible(False)
                 self.setImage("rectangleSymbol.png")
+            # Adjustments for squares
             elif self.squareButton.isChecked():
                 self.input1Line.setVisible(True)
                 self.input1Label.setVisible(True)
@@ -102,6 +111,7 @@ class Controller(QMainWindow, Ui_MainWindow):
                 self.input3Line.setVisible(False)
                 self.input3Label.setVisible(False)
                 self.setImage("squareSymbol.jpg")
+            # Adjustments for triangles
             elif self.triangleButton.isChecked():
                 self.input1Line.setVisible(True)
                 self.input1Label.setVisible(True)
@@ -140,6 +150,7 @@ class Controller(QMainWindow, Ui_MainWindow):
         Calculates the area of a given shape with given conditions
         :return: Does not return anything
         '''
+        # Calculation for circle area
         if self.circleButton.isChecked():
             try:
                 radius = float(self.input1Line.text())
@@ -151,6 +162,7 @@ class Controller(QMainWindow, Ui_MainWindow):
             else:
                 area = math.pi * radius ** 2
                 self.outputLabel.setText(f'Circle area = {area:.2f}')
+        # Calculation for rectangle area
         elif self.rectangleButton.isChecked():
             try:
                 length = float(self.input1Line.text())
@@ -170,6 +182,7 @@ class Controller(QMainWindow, Ui_MainWindow):
                 else:
                     area = length * width
                     self.outputLabel.setText(f'Rectangle area = {area:.2f}')
+        # Calculation for square area
         elif self.squareButton.isChecked():
             try:
                 length = float(self.input1Line.text())
@@ -181,6 +194,7 @@ class Controller(QMainWindow, Ui_MainWindow):
             else:
                 area = length ** 2
                 self.outputLabel.setText(f'Square area = {area:.2f}')
+        # Calculation for triangle area
         elif self.triangleButton.isChecked():
             try:
                 side1 = float(self.input1Line.text())
@@ -206,6 +220,7 @@ class Controller(QMainWindow, Ui_MainWindow):
         Calculates the perimeter of a given shape with given conditions
         :return: Does not return anything
         '''
+        # Calculation for circle perimeter
         if self.circleButton.isChecked():
             try:
                 radius = float(self.input1Line.text())
@@ -217,6 +232,7 @@ class Controller(QMainWindow, Ui_MainWindow):
             else:
                 perimeter = 2 * math.pi * radius
                 self.outputLabel.setText(f'Circle perimeter = {perimeter:.2f}')
+        # Calculation for rectangle perimeter
         elif self.rectangleButton.isChecked():
             try:
                 length = float(self.input1Line.text())
@@ -236,6 +252,7 @@ class Controller(QMainWindow, Ui_MainWindow):
                 else:
                     perimeter = (2 *length) + (2 * width)
                     self.outputLabel.setText(f'Rectangle perimeter = {perimeter:.2f}')
+        # Calculation for square perimeter
         elif self.squareButton.isChecked():
             try:
                 length = float(self.input1Line.text())
@@ -247,6 +264,7 @@ class Controller(QMainWindow, Ui_MainWindow):
             else:
                 perimeter = length * 4
                 self.outputLabel.setText(f'Square perimeter = {perimeter:.2f}')
+        # Calculation for triangle perimeter
         elif self.triangleButton.isChecked():
             try:
                 side1 = float(self.input1Line.text())
